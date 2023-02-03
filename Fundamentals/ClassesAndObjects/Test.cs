@@ -5,7 +5,8 @@ class Test
     internal void Foo()
     {
         House house1 = new();
-        var house2 = new House();
+
+        //var house2 = new House();
 
         house1.address = "Tinkune, Ktm";
         house1.length = 45.6f;
