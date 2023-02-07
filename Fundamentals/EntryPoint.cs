@@ -1,9 +1,33 @@
 ﻿using System;
 
+MethodAssignments ma = new();
+
+string m = ma.CalulateBMI(77.5f, 5.7f);
+string m1 = ma.CalulateBMI(89.5f, 5.10f);
+string m2 = ma.CalulateBMI(50.5f, 5.3f);
+string m3 = ma.CalulateBMI(60f, 5.1f);
+Console.WriteLine(m);
+Console.WriteLine(m1);
+Console.WriteLine(m2);
+Console.WriteLine(m3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Top-level statements
 // public static void Main() is implicitly there
 
-MethodLearner ml = new();
+//MethodLearner ml = new();
 // ml.Display();
 // ml.Display("Hi");
 // ml.Display("Welcome");
@@ -33,6 +57,6 @@ MethodLearner ml = new();
 // // Named arguments
 // var p5 = ml.Multiply(z: 34.5, x: 67.7, y: 45.12);
 
-var x = ml.CalculateMin(3, 4, 5, 6, 7, 8, 12, 98, 2, 45, -1);
-var (min, max) = ml.CalculateMinMax(3, 4, 5, 6, 7, 8, 12, 98, 2, 45, -1);
+// var x = ml.CalculateMin(3, 4, 5, 6, 7, 8, 12, 98, 2, 45, -1);
+// var (min, max) = ml.CalculateMinMax(3, 4, 5, 6, 7, 8, 12, 98, 2, 45, -1);
 
