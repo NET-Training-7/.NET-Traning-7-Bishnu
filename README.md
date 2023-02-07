@@ -7,3 +7,9 @@
 
 # Assignments
 1. Create a class called *Animal* with at least 4 fields and a simple method to display animal details. Create an object of *Animal* class in entry point, assign all fields and call a method displaying animal details.
+
+1. Write C# methods for following:
+    1. Method to calculate product of squares of two supplied numbers.
+    1. Method to calculate cuberoot of a number.
+    1. Method to calculate BMI index of a person.
+    

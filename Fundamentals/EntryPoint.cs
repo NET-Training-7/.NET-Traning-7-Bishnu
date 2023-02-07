@@ -35,3 +35,4 @@ MethodLearner ml = new();
 
 var x = ml.CalculateMin(3, 4, 5, 6, 7, 8, 12, 98, 2, 45, -1);
 var (min, max) = ml.CalculateMinMax(3, 4, 5, 6, 7, 8, 12, 98, 2, 45, -1);
+
