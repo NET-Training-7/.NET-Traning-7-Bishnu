@@ -3,11 +3,11 @@ class Array // Pascal
     void LearnArrays()  // Pascal casing
     {
         // Arrays
-        int personScore = 89;   // Camel casing
-        int score2 = 45;
-        int score3 = 90;
-        int score4 = 56;
-        int score5 = 82;
+        // int personScore = 89;   // Camel casing
+        // int score2 = 45;
+        // int score3 = 90;
+        // int score4 = 56;
+        // int score5 = 82;
 
         // One-dimensional array
         int[] scores = new int[5];
