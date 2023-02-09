@@ -12,3 +12,10 @@
     1. Method to calculate product of squares of two supplied numbers.
     1. Method to calculate cuberoot of a number.
     1. Method to calculate BMI index of a person.
+
+1. Think of a real-world example where you have 4 classes as folowing:
+    1. **Class1**: has at least two fields and a overridable method
+    2. **Class2**: inherits from class1, has at least a extra field
+    1. **Class3**: inherits from class1, should override a method in its parent
+    1. **Interface1**: has at least two method definitions
+    1. **Class4**: inherits class 2 and implements interface1
