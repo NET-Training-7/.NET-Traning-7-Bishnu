@@ -6,18 +6,15 @@ string m = ma.CalulateBMI(77.5f, 5.7f);
 string m1 = ma.CalulateBMI(89.5f, 5.10f);
 string m2 = ma.CalulateBMI(50.5f, 5.3f);
 string m3 = ma.CalulateBMI(60f, 5.1f);
-Console.WriteLine(m);
-Console.WriteLine(m1);
-Console.WriteLine(m2);
-Console.WriteLine(m3);
+
+// Console.WriteLine($"{m}, {m1}");
+
+// Console.WriteLine(m2);
+// Console.WriteLine(m3);
 
 
-
-
-
-
-
-
+var car1 = new OilEngineVehicle("Car", "Nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
+car1.PrintDetails();
 
 
 
