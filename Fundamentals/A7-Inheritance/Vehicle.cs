@@ -1,6 +1,7 @@
 using System;
 
-class Vehicle
+namespace Inheritance;
+abstract class Vehicle
 {
     internal string vendor;
     internal string vehicleNumber;

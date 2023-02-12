@@ -1,5 +1,6 @@
 using System;
 
+namespace Basics;
 public class Phone
 {
     string brand;
@@ -41,4 +42,10 @@ public class Phone
     public string ChipManufacturer { get; }
     
     public string Storage { get; private set;}
+    
+    public static string material = "Almunium";
+    public static void PrintDetails()
+    {        
+        Console.WriteLine($"It's all about phones. I am made of {material}");
+    }
 }

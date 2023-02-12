@@ -1,6 +1,6 @@
-
 using System;
 
+namespace Inheritance;
 class OilEngineVehicle : Vehicle
 {
     public OilEngineVehicle(string type, 

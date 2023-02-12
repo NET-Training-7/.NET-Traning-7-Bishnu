@@ -1,11 +1,12 @@
 using System;
 
+namespace Basics;
 class DataType
 {
     void LearnDataTypes()
     {
-        
-// Numbers (Signed(+/-) and unsigned(+))
+
+        // Numbers (Signed(+/-) and unsigned(+))
         // 1. Intrgrals
         byte a = 34;
         short b = -4235;

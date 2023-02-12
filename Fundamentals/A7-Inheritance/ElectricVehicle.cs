@@ -1,3 +1,4 @@
+namespace Inheritance;
 class ElectricVehicle: Vehicle
 {
     public ElectricVehicle(string type, 

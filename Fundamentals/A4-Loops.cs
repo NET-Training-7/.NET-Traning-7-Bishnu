@@ -1,5 +1,6 @@
 using System;
 
+namespace Basics;
 class Loop
 {
     void LearnLoops()

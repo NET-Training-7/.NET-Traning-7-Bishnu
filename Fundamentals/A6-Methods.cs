@@ -1,5 +1,6 @@
 using System;
 
+namespace Basics;
 class MethodLearner
 {
     // Method that returns nothing, takes no arguments

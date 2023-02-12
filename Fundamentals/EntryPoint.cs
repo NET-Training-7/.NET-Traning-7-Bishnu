@@ -1,4 +1,6 @@
 ﻿using System;
+using Basics;
+using Inheritance;
 
 MethodAssignments ma = new();
 
@@ -10,18 +12,19 @@ string m3 = ma.CalulateBMI(60f, 5.1f);
 // Console.WriteLine($"{m}, {m1}");
 
 // Console.WriteLine(m2);
-// Console.WriteLine(m3);
+Console.WriteLine(m3);
 
-
-// var car1 = new OilEngineVehicle("Car", "Nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
-// car1.PrintDetails();
+var car1 = new OilEngineVehicle("Car", "Nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
+car1.PrintDetails();
 
 Phone phone1 = new();
+Phone.material = "sadfasf asf";
+Phone.PrintDetails();
+
 phone1.Brand = "A";
 phone1.Model = "IPhone 14";
 phone1.ReleaseDate = new DateTime(2023, 12, 12);
 var f = phone1.ChipManufacturer;
-
 
 
 // Top-level statements

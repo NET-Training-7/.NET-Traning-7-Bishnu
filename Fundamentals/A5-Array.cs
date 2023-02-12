@@ -1,3 +1,4 @@
+namespace Basics;
 class Array // Pascal
 {
     void LearnArrays()  // Pascal casing
