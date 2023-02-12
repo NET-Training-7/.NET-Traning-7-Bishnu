@@ -13,11 +13,14 @@ string m3 = ma.CalulateBMI(60f, 5.1f);
 // Console.WriteLine(m3);
 
 
-var car1 = new OilEngineVehicle("Car", "Nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
-car1.PrintDetails();
+// var car1 = new OilEngineVehicle("Car", "Nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
+// car1.PrintDetails();
 
-
-
+Phone phone1 = new();
+phone1.Brand = "A";
+phone1.Model = "IPhone 14";
+phone1.ReleaseDate = new DateTime(2023, 12, 12);
+var f = phone1.ChipManufacturer;
 
 
 
