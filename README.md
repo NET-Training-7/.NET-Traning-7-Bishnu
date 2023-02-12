@@ -19,3 +19,9 @@
     1. **Class3**: inherits from class1, should override a method in its parent
     1. **Interface1**: has at least two method definitions
     1. **Class4**: inherits class 2 and implements interface1
+
+1. Write a real world class that contains:
+    1. three properties: full, read-only and write-only
+    1. a static method
+    1. put this class with in a namespace
+    1. Instantiate (create object) this class in entry point (Main method)
