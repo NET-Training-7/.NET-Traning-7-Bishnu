@@ -2,29 +2,29 @@
 using Basics;
 using Inheritance;
 
-MethodAssignments ma = new();
+//MethodAssignments ma = new();
 
-string m = ma.CalulateBMI(77.5f, 5.7f);
-string m1 = ma.CalulateBMI(89.5f, 5.10f);
-string m2 = ma.CalulateBMI(50.5f, 5.3f);
-string m3 = ma.CalulateBMI(60f, 5.1f);
+// string m = ma.CalulateBMI(77.5f, 5.7f);
+// string m1 = ma.CalulateBMI(89.5f, 5.10f);
+// string m2 = ma.CalulateBMI(50.5f, 5.3f);
+// string m3 = ma.CalulateBMI(60f, 5.1f);
 
 // Console.WriteLine($"{m}, {m1}");
 
 // Console.WriteLine(m2);
-Console.WriteLine(m3);
+// Console.WriteLine(m3);
 
-var car1 = new OilEngineVehicle("Car", "Nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
-car1.PrintDetails();
+// var car1 = new OilEngineVehicle("Car", "Nexon", "Tata", 4, 15.5f, "BA.33.PA 234", 1500f);
+// car1.PrintDetails();
 
-Phone phone1 = new();
-Phone.material = "sadfasf asf";
-Phone.PrintDetails();
+// Phone phone1 = new();
+// Phone.material = "sadfasf asf";
+// Phone.PrintDetails();
 
-phone1.Brand = "A";
-phone1.Model = "IPhone 14";
-phone1.ReleaseDate = new DateTime(2023, 12, 12);
-var f = phone1.ChipManufacturer;
+// phone1.Brand = "A";
+// phone1.Model = "IPhone 14";
+// phone1.ReleaseDate = new DateTime(2023, 12, 12);
+// var f = phone1.ChipManufacturer;
 
 
 // Top-level statements
@@ -62,4 +62,26 @@ var f = phone1.ChipManufacturer;
 
 // var x = ml.CalculateMin(3, 4, 5, 6, 7, 8, 12, 98, 2, 45, -1);
 // var (min, max) = ml.CalculateMinMax(3, 4, 5, 6, 7, 8, 12, 98, 2, 45, -1);
+
+
+Generics<string> gn = new Generics<string>();
+
+gn.Print<string>("Nepal is beautiful country");
+gn.Print<byte>(79);
+gn.Print<bool>(false);
+
+gn.Greet("Hello there!");
+
+
+
+
+
+
+
+
+
+
+
+
+
 
