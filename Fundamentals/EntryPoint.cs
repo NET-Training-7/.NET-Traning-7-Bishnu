@@ -64,16 +64,17 @@ using Inheritance;
 // var (min, max) = ml.CalculateMinMax(3, 4, 5, 6, 7, 8, 12, 98, 2, 45, -1);
 
 
-Generics<string> gn = new Generics<string>();
+// Generics<string> gn = new Generics<string>();
 
-gn.Print<string>("Nepal is beautiful country");
-gn.Print<byte>(79);
-gn.Print<bool>(false);
+// gn.Print<string>("Nepal is beautiful country");
+// gn.Print<byte>(79);
+// gn.Print<bool>(false);
 
-gn.Greet("Hello there!");
+// gn.Greet("Hello there!");
 
 
-
+LINQ l = new();
+l.LearnToQuery();
 
 
 
