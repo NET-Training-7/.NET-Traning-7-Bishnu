@@ -25,3 +25,16 @@
     1. a static method
     1. put this class with in a namespace
     1. Instantiate (create object) this class in entry point (Main method)
+
+1. You have following dictionary:
+    ```    
+        Dictionary<string, long> countryPopulation = new();
+        countryPopulation.Add("Nepal", 9837498);
+        countryPopulation.Add("India", 127398217498);
+        countryPopulation.Add("China", 123802342434);
+        countryPopulation.Add("USA", 3802342434);
+        countryPopulation.Add("Germany", 22342434);
+        countryPopulation.Add("Canada", 12342434);
+    ```
+    1. List all country names
+    2. List all countries in descending order of their population
