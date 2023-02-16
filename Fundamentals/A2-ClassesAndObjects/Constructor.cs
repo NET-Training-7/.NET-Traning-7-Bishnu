@@ -1,16 +1,19 @@
+using System;
+
 class Person
 {
-    internal string name;
-    internal byte age;
+    internal string Name { get; set; }
+    internal DateTime Dob { get; set; }
+    internal string Natioanality { get; set; }
 
     public Person()     // Default parameterless contructor
-    {        
+    {
     }
 
-    public Person(string n, byte a)
+    public Person(string n, DateTime a)
     {
-        name = n;
-        age = a;
+        Name = n;
+        Dob = a;
     }
 
     ~Person()
@@ -24,10 +27,10 @@ class Test2
     void T()
     {
         var p1 = new Person();
-        p1.age = 23;
-        p1.name = "Ram";
-        
-        var p2 = new Person("Kishan", 67);
-        var p3 = new Person("Kishan", 67);
+        // p1.Age = 23;
+        p1.Name = "Ram";
+
+        var p2 = new Person("Kishan", DateTime.Now);
+        var p3 = new Person("Kishan", DateTime.Now);
     }
 }

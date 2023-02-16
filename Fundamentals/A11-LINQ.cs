@@ -9,8 +9,26 @@ class LINQ
 {
     int[] scores = { 3, 4, 5, 6, 12, 34, 15, 230, 56, 13, 870, 98, 93, 231, 342 };
     string[] names = { "Ram Karki", "ELton John", "Balen Shah", "Baburam Bhattarai" };
+    Dictionary<string, long> countryPopulation = new()
+    {
+        ["Nepal"] = 9837498,
+        ["India"] = 127398217498,
+        ["China"] = 123802342434,
+        ["USA"] = 3802342434,
+        ["Germany"] = 22342434,
+        ["Canada"] = 12342434
+    };
+    List<Person> people = new()
+    {
+        new Person(){Natioanality="Nepal", Name = "Ram Ji", Dob = new DateTime(1998, 12, 13)},
+        new Person(){Natioanality="China", Name = "Ajaya", Dob = new DateTime(2010, 1, 13)},
+        new Person(){Natioanality="India", Name = "Krishna", Dob = new DateTime(1988, 2, 23)},
+        new Person(){Natioanality="USA", Name = "Anirudra", Dob = new DateTime(1978, 3, 1)},
+        new Person(){Natioanality="India", Name = "Kishan", Dob = new DateTime(1990, 4, 13)},
+        new Person(){Natioanality="Nepal", Name = "Roshan", Dob = new DateTime(2008, 10, 29)},
+    };
 
-    public void LearnToQuery()
+    public void LearnToQuerySelectAndWhere()
     {
         // Q1. Find all even numbers from scores
         // Method syntax
@@ -42,11 +60,48 @@ class LINQ
         // Q8. Get uppercase equivalent of all names and sort them in ascending order
         var uNames = from name in names
                      orderby name
-                     select name.ToUpper(); 
+                     select name.ToUpper();
+
+
+        // List all country names
+        // List all countries in descending order of their population
+
+        var countryNames = countryPopulation.Select(c => c.Key);
+        var countriesSorted = from c in countryPopulation
+                              orderby c.Value
+                              select c;
 
         foreach (var num in squares)
         {
             Console.Write($"{num} ");
         }
+    }
+    public void LearnToQueryOthers()
+    {
+        // Quntification: Any, All
+        // Find if scores contains any even number
+        var containEvenNumber = scores.Any(x => x % 2 == 0);
+        var containAnyElement = scores.Any();
+
+        // Find if scores has all even numbers
+        var allEvenNumbers = scores.All(x => x % 2 == 0);
+
+        // Partitioning: skip and take
+        // Get first 3 elements from scores
+        var x = scores.Take(3);
+
+        // Skip frist 5 and take next 3
+        var y = scores.Skip(5).Take(3);
+    }
+    public void LearnTOQueryComplexCollections()
+    {
+        // Find names of people who can vote
+        // fix this
+        var voteList = from p in people
+                   where p.Age >= 18
+                   select p.Name;
+
+        // Find all nepalese people who born after .NET is released
+
     }
 }
