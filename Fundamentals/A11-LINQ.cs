@@ -20,12 +20,19 @@ class LINQ
     };
     List<Person> people = new()
     {
-        new Person(){Natioanality="Nepal", Name = "Ram Ji", Dob = new DateTime(1998, 12, 13)},
-        new Person(){Natioanality="China", Name = "Ajaya", Dob = new DateTime(2010, 1, 13)},
-        new Person(){Natioanality="India", Name = "Krishna", Dob = new DateTime(1988, 2, 23)},
-        new Person(){Natioanality="USA", Name = "Anirudra", Dob = new DateTime(1978, 3, 1)},
-        new Person(){Natioanality="India", Name = "Kishan", Dob = new DateTime(1990, 4, 13)},
-        new Person(){Natioanality="Nepal", Name = "Roshan", Dob = new DateTime(2008, 10, 29)},
+        new Person(){EducationDegreeId=1, Natioanality="Nepal", Name = "Ram Ji", Dob = new DateTime(1998, 12, 13)},
+        new Person(){EducationDegreeId=2, Natioanality="China", Name = "Ajaya", Dob = new DateTime(2010, 1, 13)},
+        new Person(){EducationDegreeId=3, Natioanality="India", Name = "Krishna", Dob = new DateTime(1988, 2, 23)},
+        new Person(){EducationDegreeId=3, Natioanality="USA", Name = "Anirudra", Dob = new DateTime(1978, 3, 1)},
+        new Person(){EducationDegreeId=1, Natioanality="India", Name = "Kishan", Dob = new DateTime(1990, 4, 13)},
+        new Person(){EducationDegreeId=2, Natioanality="Nepal", Name = "Roshan", Dob = new DateTime(2008, 10, 29)},
+    };
+
+    List<EducationDegree> degrees = new()
+    {
+        new() { Id = 1, Major = "Science", Title = "M.Sc.", University = "TU"},
+        new() { Id = 2, Major = "Arts", Title = "M.A.", University = "KU"},
+        new() { Id = 3, Major = "Education", Title = "M.Ed.", University = "TU"}
     };
 
     public void LearnToQuerySelectAndWhere()
@@ -98,10 +105,16 @@ class LINQ
         // Find names of people who can vote
         // fix this
         var voteList = from p in people
-                   where p.Age >= 18
-                   select p.Name;
+                       where ((DateTime.Now - p.Dob).TotalDays / 365) >= 18
+                       select p.Name;
 
         // Find all nepalese people who born after .NET is released
+        var z = from p in people
+                where p.Natioanality == "Nepal" && p.Dob.Year > 2002
+                select p;
+
+        // Find all people names and corresponding degree title who has science major
+        // Find all indians who are doing arts. Print all people and their education details. 
 
     }
 }

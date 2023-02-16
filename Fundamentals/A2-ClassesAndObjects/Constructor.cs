@@ -5,6 +5,7 @@ class Person
     internal string Name { get; set; }
     internal DateTime Dob { get; set; }
     internal string Natioanality { get; set; }
+    public int EducationDegreeId { get; set; }
 
     public Person()     // Default parameterless contructor
     {
@@ -20,6 +21,14 @@ class Person
     {
 
     }
+}
+
+class EducationDegree
+{
+    public int Id { get; set; }
+    public string Title { get; set; }
+    public string Major { get; set; }
+    public string University { get; set; }
 }
 
 class Test2
