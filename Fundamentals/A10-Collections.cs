@@ -13,12 +13,12 @@ class Collections
 
         List<Person> people = new List<Person>();
         
-        var p1 = new Person() { name = "Bishnu" };
+        var p1 = new Person() { Name = "Bishnu" };
         people.Add(p1);
-        people.Add(new Person() { name = "Ram" });
-        people.Add(new Person() { name = "Hari" });
-        people.Add(new Person() { name = "Bishnu" });
-        people.Remove(new Person() { name = "Ram" });
+        people.Add(new Person() { Name = "Ram" });
+        people.Add(new Person() { Name = "Hari" });
+        people.Add(new Person() { Name = "Bishnu" });
+        people.Remove(new Person() { Name = "Ram" });
     }
 
     void LearnDictionary()

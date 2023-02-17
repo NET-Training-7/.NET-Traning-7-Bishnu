@@ -1,7 +1,7 @@
 ﻿using System;
 using Basics;
 using Inheritance;
-
+using IO;
 //MethodAssignments ma = new();
 
 // string m = ma.CalulateBMI(77.5f, 5.7f);
@@ -73,11 +73,8 @@ using Inheritance;
 // gn.Greet("Hello there!");
 
 
-LINQ l = new();
-l.LearnToQuery();
-
-
-
+FDHandling fd = new();
+fd.LearnMore();
 
 
 

@@ -114,7 +114,28 @@ class LINQ
                 select p;
 
         // Find all people names and corresponding degree title who has science major
-        // Find all indians who are doing arts. Print all people and their education details. 
+        var scieneMajorStudnets = from p in people
+                                  join d in degrees
+                                  on p.EducationDegreeId equals d.Id
+                                  where d.Title == "Science"
+                                  orderby p.Name
+                                  select new { p.Name, d.Title };
 
+        // Find all indians who are doing arts. Print all people and their education details. 
+        var artMajorIndians = from p in people
+                              join d in degrees
+                              on p.EducationDegreeId equals d.Id
+                              where d.Title == "Art" && p.Natioanality == "India"
+                              select new { p, d };
+
+        // Find count of people according to their degree titles
+        // Hint: group by
+        var peopleByDegrees = from p in people
+                              join d in degrees
+                              on p.EducationDegreeId equals d.Id
+                              group p by d.Title into pGroup
+                              select new { Title = pGroup.Key, Count = pGroup.Count() };
+        
+        
     }
 }
