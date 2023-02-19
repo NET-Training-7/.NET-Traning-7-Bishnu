@@ -74,7 +74,7 @@ using IO;
 
 
 FDHandling fd = new();
-fd.LearnMore();
+fd.DoClassWork();
 
 
 
