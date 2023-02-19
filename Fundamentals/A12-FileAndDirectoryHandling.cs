@@ -33,4 +33,18 @@ class FDHandling
         string[] sentences = content.Split(separators);
 
     }
+
+    public void DoClassWork()
+    {
+        // Q1: Create a folder "Data" and create a text file inside 
+        // that folder containing name and dob of at least 5 people
+
+
+        // Q2: Create 20 folders namely Folder-A, Folder-B... Folder-T
+
+        // Q3: In Folder-A, copy yesterday's text file containg story.
+        
+        // Q4: In Folder-B, create a text file containing meta data (Size, CreatedDate etc.)
+        // for that story file
+    }
 }
