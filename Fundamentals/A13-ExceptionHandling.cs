@@ -16,7 +16,7 @@ class ExceptionHandling
             {
                 throw new IOException("'FDHandling1' folder does not exit.");
             }
-            
+
             stream = File.Create(fileFullPath);
             stream.WriteByte(255);
         }
@@ -31,6 +31,28 @@ class ExceptionHandling
         finally
         {
             stream.Close();
+        }
+    }
+
+    public void DoClassWork()
+    {
+        // Write a code to calculate remaining days for upcomming "Holi" festival.
+        // Write try/catch blcoks to handle possible error
+        // And greet user with "Happy HOLI!" message no matter error occurs or not.
+        try
+        {
+            var holiDate = new DateTime(2023, 3, 18);
+            var remainingSpan = holiDate - DateTime.Now;
+            var remainingDays = remainingSpan.Days;
+            Console.WriteLine($"{remainingDays} days remaining for our Holi.");
+        }
+        catch(Exception e)
+        {
+            Console.WriteLine($"Error calculating remaining days for holi.\nError: {e.Message}");
+        }
+        finally
+        {
+            Console.WriteLine("Happy HOLI!");
         }
     }
 }

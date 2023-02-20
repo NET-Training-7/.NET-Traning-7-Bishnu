@@ -77,7 +77,7 @@ using IO;
 // fd.DoClassWork();
 
 ExceptionHandling eh = new();
-eh.CreateNewFile();
+eh.DoClassWork();
 
 
 
