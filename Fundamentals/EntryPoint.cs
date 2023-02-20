@@ -73,9 +73,11 @@ using IO;
 // gn.Greet("Hello there!");
 
 
-FDHandling fd = new();
-fd.DoClassWork();
+// FDHandling fd = new();
+// fd.DoClassWork();
 
+ExceptionHandling eh = new();
+eh.CreateNewFile();
 
 
 
