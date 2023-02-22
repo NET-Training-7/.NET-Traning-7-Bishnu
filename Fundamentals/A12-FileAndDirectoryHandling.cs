@@ -1,15 +1,20 @@
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace IO;
 class FDHandling
 {
-    public void LearnFiles()
+    public async Task LearnFiles()
     {
         // Create new file
         var rootFolder = @"D:\Apps\.NET Training 7\.NET-Traning-7-Bishnu\Fundamentals\FDHandling";
         var filePath = $"{rootFolder}\\firstFile.txt";
+        
         File.WriteAllText(filePath, "Nepal is beautiful country. Please visit us.");
+                
+        await File.WriteAllTextAsync(filePath, "Nepal is beautiful country. Please visit us.");
+
         Console.WriteLine("File created successfully.");
 
         var folderPath = $"{rootFolder}\\Nepal";

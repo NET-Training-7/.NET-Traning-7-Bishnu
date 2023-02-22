@@ -76,9 +76,11 @@ using IO;
 // FDHandling fd = new();
 // fd.DoClassWork();
 
-ExceptionHandling eh = new();
-eh.DoClassWork();
+// ExceptionHandling eh = new();
+// eh.DoClassWork();
 
+ParallelProgramming pl = new();
+pl.ComputeSquareRoots();
 
 
 
