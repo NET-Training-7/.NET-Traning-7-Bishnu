@@ -1,0 +1,12 @@
+.olStyle {
+    color: blueviolet;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+button {
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+    border-radius: 20%;
+}
