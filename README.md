@@ -38,3 +38,5 @@
     ```
     1. List all country names
     2. List all countries in descending order of their population
+
+1. Create a html page to display data for at least 5 countries in a table. Apply bootstrap designs to that table.
