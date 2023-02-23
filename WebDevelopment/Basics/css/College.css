@@ -1,0 +1,11 @@
+.olStyle {
+    color: #FF00FF;
+    font-size: 15px;
+    font-family: monospace;
+}
+
+#ulList {
+    color:aqua;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
