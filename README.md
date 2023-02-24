@@ -40,3 +40,12 @@
     2. List all countries in descending order of their population
 
 1. Create a html page to display data for at least 5 countries in a table. Apply bootstrap designs to that table.
+
+1. Create a page containing a form to alow users to enter their details like:
+    1. Name
+    1. Address
+    1. Gender
+    1. Contact
+    1. Date of birth
+    1. Biography
+    > Note: Use bootstrap design to style your elements.
