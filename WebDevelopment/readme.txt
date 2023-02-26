@@ -29,9 +29,30 @@ JavaScript - defines interactivity
 
 
 
+- Environments in SDLC
+
+-- Development - Devs write code, verifies: IDE, push
+-- QA/Test - QA work - Alpha
+-- INT - Beta
+-- UAT - RC
+-- Prod - GA
+
+- URLs
+-- Web: Http/https, client-server computing
+
+-- protocol://domain(ip):3634/pathA/pathB?x=23&name=bishnu
+--Example: google
+
+https://www.google.com:443/search?q=kathmandu&sxsrf=AJOqlzU-8461g6RZ-bA1nRfqlOWzw1WbfQ%3A1677380857806&source=hp&ei=-cz6Y4SpLvDz4-EPyOqu-AI&iflsig=AK50M_UAAAAAY_rbCdbWZyxddA-yz43HPeLniUsy2xWX&ved=0ahUKEwjEibjRmrL9AhXw-TgGHUi1Cy8Q4dUDCAg&uact=5&oq=kathmandu&gs_lcp=Cgdnd3Mtd2l6EAMyBAguECcyDQgAEIAEELEDEIMBEBMyCggAEIAEELEDEBMyCggAEIAEELEDEBMyCgguEIAEELEDEBMyCggAEIAEELEDEBMyDQgAEIAEELEDEIMBEBMyEwguEIAEELEDEIMBEMcBEK8BEBMyBwgAEIAEEBMyBwguEIAEEBM6BwgjEOoCECc6DQguEMcBENEDEOoCECc6DQguEMcBEK8BEOoCECc6BAgjECc6CAgAELEDEIMBOgsIABCABBCxAxCDAToLCC4QsQMQxwEQ0QM6BQguEIAEOgsILhCxAxDHARCvAToICC4QgAQQsQM6BQgAELEDOggIABCABBCxAzoLCC4QgAQQsQMQgwE6BQgAEIAEOhEILhCABBCxAxCDARDHARCvAVDUAljJC2CzD2gBcAB4AIABkwGIAb0JkgEDMC45mAEAoAEBsAEK&sclient=gws-wiz
+
+https://www.bing.com/search?q=kathmandu&form=QBLH&sp=-1&ghc=1&lq=0&pq=kathmandu&sc=6-9&qs=n&sk=&cvid=5D3874FD6774400D87C6B09C6BED1AC2&ghsh=0&ghacc=0&ghpl=
+
+https://duckduckgo.com/?q=kathmandu&t=h_&ia=web
 
 
-
-
-
-
+-- web app
+- deploy
+-- server (physical machine), app/web server installation(IIS, nginx, apache etc.)
+-- public IP (IPV4) 168.12.34.45, (IPV6)
+-- Domain name
+-- Digital Certificate
