@@ -1,0 +1,8 @@
+[
+  {
+    "outputFileName": "Pages/Shared/_Layout.cshtml.min.css",
+    "inputFiles": [
+      "Pages/Shared/_Layout.cshtml.css"
+    ]
+  }
+]

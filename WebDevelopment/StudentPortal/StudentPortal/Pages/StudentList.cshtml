@@ -6,4 +6,40 @@
 
 @*Quetion2: Display dynamic list of students (binding to model) in a table styled with boostrap*@
 
-@Model.Students
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>Major</th>
+            <th>Contact</th>
+            <th>Semester</th>
+        </tr>
+    </thead>
+    <tbody>
+        @*@for (int i = 0; i < studentList.Count; i++)
+        {
+            <tr>
+                <td>@studentList[i].RollNo</td>
+                <td>@studentList[i].Name</td>
+                <td>@studentList[i].Major</td>
+                <td>@studentList[i].Contact</td>
+                <td>@studentList[i].Semester</td>
+            </tr>   
+        }*@
+        @foreach (var student in Model.Students)
+        {
+                <tr>
+                    <td>@student.RollNo</td>
+                    <td>@student.Name</td>
+                    <td>@student.Major</td>
+                    <td>@student.Contact</td>
+                    <td>@student.Semester</td>
+                </tr>   
+        } 
+    </tbody>
+</table>
+
+
+
