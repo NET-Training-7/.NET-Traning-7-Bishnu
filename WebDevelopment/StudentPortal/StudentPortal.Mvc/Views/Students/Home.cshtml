@@ -1,0 +1,32 @@
+﻿@model List<Student>
+
+<a class="btn btn-outline-success" href="/students/add"> + New Student</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>Major</th>
+            <th>Contact</th>
+            <th>Semester</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.RollNo</td>
+                <td>@student.Name</td>
+                <td>@student.Major</td>
+                <td>@student.Contact</td>
+                <td>@student.Semester</td>
+                <td>
+                    <a class="btn btn-outline-warning">Edit</a>
+                    <a class="btn btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

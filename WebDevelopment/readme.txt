@@ -56,3 +56,14 @@ https://duckduckgo.com/?q=kathmandu&t=h_&ia=web
 -- public IP (IPV4) 168.12.34.45, (IPV6)
 -- Domain name
 -- Digital Certificate
+
+
+
+- HTTP Request and Response
+- Request Methods(Verbs): GET, POST, PUT, DELETE
+- Responses: Status Codes
+---- 1XX: Informational
+---- 2XX: Success e.g. 200 OK, 201 Created
+---- 3XX: Redirection
+---- 4XX: Client Error
+---- 5XX: Server Error
