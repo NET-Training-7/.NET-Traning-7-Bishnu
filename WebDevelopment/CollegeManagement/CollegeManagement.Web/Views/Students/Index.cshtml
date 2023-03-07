@@ -1,0 +1,33 @@
+﻿@model List<Student>
+
+<a asp-action="add" class="btn btn-success float-end"><i class="bi bi-plus-lg "></i> Student Registration</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>Major</th>
+            <th>Contact</th>
+            <th>Semester</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.RollNo</td>
+                <td>@student.Name</td>
+                <td>@student.Major</td>
+                <td>@student.Contact</td>
+                <td>@student.Semester</td>
+                <td>
+                    <a href="/students/details/@student.RollNo"><i class="bi bi-eye"></i></a>
+                    <a href="/students/edit"><i class="bi bi-pencil text-warning"></i></a>
+                    <a href="/students/delete"><i class="bi bi-trash3 text-danger"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
