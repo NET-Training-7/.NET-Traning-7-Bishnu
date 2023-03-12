@@ -15,7 +15,7 @@ namespace CollegeManagement.Web.Controllers
         public IActionResult LearnAdoNET()
         {
             // Fetch Student data from student table
-            string connectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=CollegeDb_Test;Integrated Security=True;";
+            string connectionString = @"Data Source=(localdb)\mssqllocaldb;Initial Catalog=CollegeDb_Test;Integrated Security=True;";
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand("Select * from dbo.Student", connection);
             
