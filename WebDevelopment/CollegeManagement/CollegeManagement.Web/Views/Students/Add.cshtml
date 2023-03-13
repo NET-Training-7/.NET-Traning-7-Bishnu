@@ -1,0 +1,52 @@
+﻿@model Student
+
+<h3 class="text-center">New Student Form</h3>
+
+<form asp-action="Add" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label class="form-label" asp-for="Name"></label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label" asp-for="RollNo"></label>
+        <input class="form-control" asp-for="RollNo" />
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label" asp-for="Gender"></label>
+        <input class="form-control" asp-for="Gender" />
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label" asp-for="Address"></label>
+        <input class="form-control" asp-for="Address" />
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label" asp-for="Contact"></label>
+        <input class="form-control" asp-for="Contact" />
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label" asp-for="Email"></label>
+        <input class="form-control" asp-for="Email" />
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label" asp-for="Dob"></label>
+        <input class="form-control" asp-for="Dob" />
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label" asp-for="Major"></label>
+        <input class="form-control" asp-for="Major" />
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label" asp-for="Semester"></label>
+        <input class="form-control" asp-for="Semester" />
+    </div>
+
+    <button class="btn btn-success" type="submit">Register Student</button>
+</form>

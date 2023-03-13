@@ -6,6 +6,19 @@
         <p class="form-control">@Model.Name</p>
     </div>
     <div class="col-md-6">
+        <label class="form-label">Gender</label>
+        <p class="form-control">@Model.Gender</p>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Address</label>
+        <p class="form-control">@Model.Address</p>
+    </div>
+    <div class="col-md-6">
+        <label class="form-label">Date Of Birth</label>
+        <p class="form-control">@Model.Dob</p>
+    </div>
+
+    <div class="col-md-6">
         <label class="form-label">Roll Number</label>
         <p class="form-control">@Model.RollNo</p>
     </div>
@@ -21,4 +34,8 @@
         <label class="form-label">Contact</label>
         <p class="form-control">@Model.Contact</p>
     </div>
+    <div class="col-md-6">
+        <a class="btn btn-success" href="/students"><i class="bi bi-arrow-left"></i> Back to Students</a>
+    </div>
+
 </form>
