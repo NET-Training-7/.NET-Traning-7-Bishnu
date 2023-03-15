@@ -1,21 +1,35 @@
 ﻿@model Student
 
+@{
+    string[] gender = { "Male", "Female", "Others" };
+}
+
 <h3 class="text-center">New Student Form</h3>
 
 <form asp-action="Add" method="post" class="row g-3">
     <div class="col-md-6">
         <label class="form-label" asp-for="Name"></label>
+        <span asp-validation-for="Name" class="text-danger"></span>
         <input class="form-control" asp-for="Name" />
     </div>
 
     <div class="col-md-6">
         <label class="form-label" asp-for="RollNo"></label>
+        <span asp-validation-for="RollNo" class="text-danger"></span>
         <input class="form-control" asp-for="RollNo" />
     </div>
 
     <div class="col-md-6">
         <label class="form-label" asp-for="Gender"></label>
-        <input class="form-control" asp-for="Gender" />
+        <span asp-validation-for="Gender" class="text-danger"></span>
+        <br/>
+        @foreach(var g in gender)
+        {
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="Gender" id="@g" value="@g">
+                <label class="form-check-label" for="@g">@g</label>
+            </div>
+        }
     </div>
 
     <div class="col-md-6">
@@ -25,6 +39,7 @@
 
     <div class="col-md-6">
         <label class="form-label" asp-for="Contact"></label>
+        <span asp-validation-for="Contact" class="text-danger"></span>
         <input class="form-control" asp-for="Contact" />
     </div>
 
@@ -40,11 +55,13 @@
 
     <div class="col-md-6">
         <label class="form-label" asp-for="Major"></label>
+        <span asp-validation-for="Major" class="text-danger"></span>
         <input class="form-control" asp-for="Major" />
     </div>
 
     <div class="col-md-6">
         <label class="form-label" asp-for="Semester"></label>
+        <span asp-validation-for="Semester" class="text-danger"></span>
         <input class="form-control" asp-for="Semester" />
     </div>
 
