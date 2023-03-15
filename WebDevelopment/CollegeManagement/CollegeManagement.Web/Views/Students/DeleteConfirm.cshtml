@@ -1,0 +1,9 @@
+﻿@model Student
+
+<h3 class="text-danger">Do you want to delete data for student: @Model.Name ?</h3>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <a class="btn btn-success" href="/students">Cancel</a>
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>

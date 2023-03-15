@@ -36,4 +36,37 @@ public class StudentsController : Controller
 
         return RedirectToAction("Index");
     }
+
+    public IActionResult Edit(int id)
+    {
+        var student = db.Students.Find(id);
+        return View(student);
+    }
+
+    [HttpPost]
+    public IActionResult Edit(Student student)
+    {
+        if (student == null || !ModelState.IsValid)
+            return View("Error", new ErrorViewModel { RequestId = "Update Student" });
+
+        db.Students.Update(student);
+        db.SaveChanges();
+
+        return RedirectToAction("Index");
+    }
+
+    public IActionResult DeleteConfirm(int id)
+    {
+        var student = db.Students.Find(id);
+        return View(student);
+    }
+
+    [HttpPost]
+    public IActionResult Delete(Student student)
+    {   
+        db.Students.Remove(student);
+        db.SaveChanges();
+
+        return RedirectToAction("Index");
+    }
 }

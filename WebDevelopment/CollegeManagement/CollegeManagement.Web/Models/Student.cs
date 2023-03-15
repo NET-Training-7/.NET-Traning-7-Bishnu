@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using CollegeManagement.Web.Enums;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace CollegeManagement.Web.Models;
@@ -11,11 +12,11 @@ public class Student
 
     [Required(ErrorMessage = "We need your name."), ]
     [MinLength(2, ErrorMessage = "At least 2 letters please.")]
-    [RegularExpression(@"[A-Za-z ]+", ErrorMessage = "Only alphabets and space are allowed.")]
+    [RegularExpression(@"[A-Za-z ]+", ErrorMessage = "Only alphabets and spaces are allowed.")]
     public string Name { get; set; }
 
     public string? Address { get; set; }
-    public string Gender { get; set; }
+    public Sex Gender { get; set; }
 
     [DisplayName("Date Of Birth")]
     [DataType(DataType.Date)]
