@@ -1,6 +1,7 @@
 ﻿using CollegeManagement.Web.Enums;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CollegeManagement.Web.Models;
 public class Student
@@ -26,4 +27,9 @@ public class Student
     public string? Email { get; set; }
     public string Major { get; set; }
     public string Semester { get; set; }
+
+    [NotMapped]
+    public IFormFile? Avatar { get; set; }
+
+    public string? AvatarPath { get; set; }
 }

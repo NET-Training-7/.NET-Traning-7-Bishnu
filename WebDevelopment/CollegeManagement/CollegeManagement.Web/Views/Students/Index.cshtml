@@ -5,13 +5,15 @@
 <table class="table">
     <thead>
         <tr>
+            <th></th>
             <th>Roll No.</th>
             <th>Name</th>
             <th>Gender</th>
             <th>Address</th>
             <th>Date of Birth</th>
-            <th>Major</th>
             <th>Contact</th>
+            <th>Email</th>
+            <th>Major</th>
             <th>Semester</th>
             <th></th>
         </tr>
@@ -20,13 +22,20 @@
         @foreach (var student in Model)
         {
             <tr>
+                <td>
+                    @{
+                        var path = string.IsNullOrEmpty(student.AvatarPath) ? "/images/profiles/student.jpeg" : student.AvatarPath;
+                    }
+                    <img src="@path" height="35"/>
+                </td>
                 <td>@student.RollNo</td>
                 <td>@student.Name</td>
                 <td>@student.Gender</td>
                 <td>@student.Address</td>
                 <td>@student.Dob</td>
-                <td>@student.Major</td>
                 <td>@student.Contact</td>
+                <td>@student.Email</td>
+                <td>@student.Major</td>
                 <td>@student.Semester</td>
                 <td>
                     <a href="/students/details?id=@student.Id"><i class="bi bi-eye"></i></a>

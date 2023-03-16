@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CollegeManagement.Web.Models;
 using CollegeManagement.Web.Data;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using F = System.IO.File;
 
 namespace CollegeManagement.Web.Controllers;
 public class StudentsController : Controller
@@ -31,6 +31,18 @@ public class StudentsController : Controller
         if(student == null || !ModelState.IsValid)
             return View("Error", new ErrorViewModel { RequestId = "Register Student" });
 
+        //Save avatar to phyical folder
+        var image = student.Avatar;
+        var fileName = $"{Guid.NewGuid()}_{image.FileName}"; //4ea9773c-e77e-4c3c-a075-c97dcffee0fe_My Photo.jpg
+        var appFolder = Directory.GetCurrentDirectory();
+        var imageFolderPathRelative = $"/images/profiles/{fileName}";
+        var imageFolderPathAbsolute = appFolder + "/wwwroot/" + imageFolderPathRelative;
+
+        var avatar = F.Create(imageFolderPathAbsolute);
+        image.CopyTo(avatar);
+        avatar.Close();
+
+        student.AvatarPath = imageFolderPathRelative;
         db.Students.Add(student);
         db.SaveChanges();
 

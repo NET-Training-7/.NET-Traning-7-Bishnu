@@ -7,7 +7,7 @@
 
 <h3 class="text-center">New Student Form</h3>
 
-<form asp-action="Add" method="post" class="row g-3">
+<form asp-action="Add" method="post" class="row g-3" enctype="multipart/form-data">
     <div class="col-md-6">
         <label class="form-label" asp-for="Name"></label>
         <span asp-validation-for="Name" class="text-danger"></span>
@@ -64,6 +64,11 @@
         <label class="form-label" asp-for="Semester"></label>
         <span asp-validation-for="Semester" class="text-danger"></span>
         <input class="form-control" asp-for="Semester" />
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label" asp-for="Avatar"></label>
+        <input class="form-control" asp-for="Avatar">
     </div>
 
     <button class="btn btn-success" type="submit">Register Student</button>
