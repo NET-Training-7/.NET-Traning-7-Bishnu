@@ -3,6 +3,7 @@
 Student (Id, Name, Address, Gender, Dob, Phone, Email)
 Lecturer (Id, Name, Address, Gender, Dob, Phone, Email, Degree)
 Staff (Id, Name, Address, Gender, Dob, Phone, Email)
+Major (Id, Name, Details)
 Program (Id, Name, Details, Started)
 Semester (Id, Name, StartDate, EndDate)
 Subject (Id, Name, CreditHours)

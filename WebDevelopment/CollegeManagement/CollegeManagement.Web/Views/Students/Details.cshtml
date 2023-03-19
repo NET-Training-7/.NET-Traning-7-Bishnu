@@ -1,6 +1,9 @@
 ﻿@model Student
 
 <form class="row g-3">
+    <div class="col-md-12 text-center">
+        <img src="@Model.AvatarPath" height="200"/>
+    </div>
     <div class="col-md-6">
         <label class="form-label">Name</label>
         <p class="form-control">@Model.Name</p>

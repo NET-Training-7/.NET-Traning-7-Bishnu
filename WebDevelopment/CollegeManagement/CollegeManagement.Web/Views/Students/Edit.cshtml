@@ -7,7 +7,7 @@
 
 <h3 class="text-center">Update existing Student data</h3>
 
-<form asp-action="Edit" method="post" class="row g-3">
+<form asp-action="Edit" method="post" class="row g-3" enctype="multipart/form-data">
     <input type="hidden" asp-for="Id" />
     <div class="col-md-6">
         <label class="form-label" asp-for="Name"></label>
@@ -67,6 +67,21 @@
         <span asp-validation-for="Semester" class="text-danger"></span>
         <input class="form-control" asp-for="Semester" />
     </div>
+
+    <div class="col-md-6">
+        <div class="row">           
+            <div class="col-10">
+                <label class="form-label" asp-for="Avatar"></label>
+                <input class="form-control" asp-for="Avatar">
+            </div>
+            <div class="col-2">
+                <img src="@Model.AvatarPath" height="70" />
+            </div>
+        </div>
+    </div>
+
+    <input type="hidden" asp-for="AvatarPath"/>
+
     <div class="col-12">
         <a class="btn btn-success" href="/students">Cancel</a>
         <button class="btn btn-warning" type="submit">Update</button>

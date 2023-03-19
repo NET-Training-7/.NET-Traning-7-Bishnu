@@ -26,13 +26,13 @@
                     @{
                         var path = string.IsNullOrEmpty(student.AvatarPath) ? "/images/profiles/student.jpeg" : student.AvatarPath;
                     }
-                    <img src="@path" height="35"/>
+                    <img src="@path" height="35" class="rounded-circle"/>
                 </td>
                 <td>@student.RollNo</td>
                 <td>@student.Name</td>
                 <td>@student.Gender</td>
                 <td>@student.Address</td>
-                <td>@student.Dob</td>
+                <td>@student.Dob?.ToString("ddd, MMM dd yyyy")</td>
                 <td>@student.Contact</td>
                 <td>@student.Email</td>
                 <td>@student.Major</td>

@@ -11,10 +11,10 @@ public class Student
     [DisplayName("Roll Number")]
     public int RollNo { get; set; }
 
-    [Required(ErrorMessage = "We need your name."), ]
+    [Required(ErrorMessage = "We need your name."),]
     [MinLength(2, ErrorMessage = "At least 2 letters please.")]
     [RegularExpression(@"[A-Za-z ]+", ErrorMessage = "Only alphabets and spaces are allowed.")]
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
 
     public string? Address { get; set; }
     public Sex Gender { get; set; }
@@ -23,10 +23,10 @@ public class Student
     [DataType(DataType.Date)]
     public DateTime? Dob { get; set; }
 
-    public string Contact { get; set; }
+    public string Contact { get; set; } = string.Empty;
     public string? Email { get; set; }
-    public string Major { get; set; }
-    public string Semester { get; set; }
+    public string Major { get; set; } = string.Empty;
+    public string Semester { get; set; } = string.Empty; 
 
     [NotMapped]
     public IFormFile? Avatar { get; set; }
