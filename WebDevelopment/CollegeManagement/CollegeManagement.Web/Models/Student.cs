@@ -26,6 +26,7 @@ public class Student
     public string Contact { get; set; } = string.Empty;
     public string? Email { get; set; }
     public string Major { get; set; } = string.Empty;
+    public string Program { get; set; } = string.Empty;
     public string Semester { get; set; } = string.Empty; 
 
     [NotMapped]

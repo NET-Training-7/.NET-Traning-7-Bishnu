@@ -3,17 +3,12 @@
 
 @{
     var gender = Enum.GetValues<Sex>();
-    var majors = new List<SelectListItem>()
-    {
-        new SelectListItem { Text = "Science", Value = "1" },
-        new SelectListItem { Text = "Arts", Value = "2" },
-        new SelectListItem { Text = "Education", Value = "3" },
-    };
 }
 
-<h3 class="text-center">New Student Form</h3>
+<h3 class="text-center">Update existing Student data</h3>
 
-<form asp-action="Add" method="post" class="row g-3" enctype="multipart/form-data">
+<form asp-action="Edit" method="post" class="row g-3" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
     <div class="col-md-6">
         <label class="form-label" asp-for="Name"></label>
         <span asp-validation-for="Name" class="text-danger"></span>
@@ -29,11 +24,12 @@
     <div class="col-md-6">
         <label class="form-label" asp-for="Gender"></label>
         <span asp-validation-for="Gender" class="text-danger"></span>
-        <br/>
-        @foreach(var g in gender)
+        <br />
+        @foreach (var g in gender)
         {
+            var check = g == Model.Gender ? "checked" : "";
             <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="@g" name="Gender" value="@g">
+                <input class="form-check-input" type="radio" id="@g" name="Gender" value="@g" @check>
                 <label class="form-check-label" for="@g">@g</label>
             </div>
         }
@@ -63,14 +59,7 @@
     <div class="col-md-6">
         <label class="form-label" asp-for="Major"></label>
         <span asp-validation-for="Major" class="text-danger"></span>
-        <select class="form-control" asp-for="Major" asp-items="majors">
-        </select>
-    </div>
-
-    <div class="col-md-6">
-        <label class="form-label" asp-for="Program"></label>
-        <span asp-validation-for="Program" class="text-danger"></span>
-        <input class="form-control" asp-for="Program" />
+        <input class="form-control" asp-for="Major" />
     </div>
 
     <div class="col-md-6">
@@ -79,10 +68,22 @@
         <input class="form-control" asp-for="Semester" />
     </div>
 
-    <div class="col-md-12">
-        <label class="form-label" asp-for="Avatar"></label>
-        <input class="form-control" asp-for="Avatar">
+    <div class="col-md-6">
+        <div class="row">           
+            <div class="col-10">
+                <label class="form-label" asp-for="Avatar"></label>
+                <input class="form-control" asp-for="Avatar">
+            </div>
+            <div class="col-2">
+                <img src="@Model.AvatarPath" height="70" />
+            </div>
+        </div>
     </div>
 
-    <button class="btn btn-success" type="submit">Register Student</button>
+    <input type="hidden" asp-for="AvatarPath"/>
+
+    <div class="col-12">
+        <a class="btn btn-success" href="/students">Cancel</a>
+        <button class="btn btn-warning" type="submit">Update</button>
+    </div>
 </form>

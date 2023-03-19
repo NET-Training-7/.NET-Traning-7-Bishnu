@@ -1,0 +1,27 @@
+﻿@model List<Major>
+
+<a asp-action="add" class="btn btn-success float-end"><i class="bi bi-plus-lg "></i> Add New Major</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var major in Model)
+        {
+            <tr>                
+                <td>@major.Name</td>
+                <td>@major.Description</td>
+                
+                <td>
+                    <a href="/majors/edit?id=@major.Id"><i class="bi bi-pencil text-warning"></i></a>
+                    <a href="/majors/deleteconfirm?id=@major.Id"><i class="bi bi-trash3 text-danger"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
