@@ -20,7 +20,7 @@ public class MajorsController : Controller
 
     [HttpPost]
     public ActionResult Add(Major major)
-    {
+    {        
         try
         {
             db.Majors.Add(major);

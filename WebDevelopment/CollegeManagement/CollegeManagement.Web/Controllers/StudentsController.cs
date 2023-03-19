@@ -3,6 +3,7 @@ using CollegeManagement.Web.Models;
 using CollegeManagement.Web.Data;
 using F = System.IO.File;
 using CollegeManagement.Web.Helpers;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace CollegeManagement.Web.Controllers;
 public class StudentsController : Controller
@@ -23,6 +24,10 @@ public class StudentsController : Controller
 
     public IActionResult Add()
     {
+        var majorsList = db.Majors.ToList();
+        var majors = majorsList.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+        ViewData["Majors"] = majors;
+
         return View();
     }
 

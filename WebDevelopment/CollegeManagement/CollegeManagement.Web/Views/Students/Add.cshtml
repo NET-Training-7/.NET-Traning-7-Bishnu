@@ -3,12 +3,7 @@
 
 @{
     var gender = Enum.GetValues<Sex>();
-    var majors = new List<SelectListItem>()
-    {
-        new SelectListItem { Text = "Science", Value = "1" },
-        new SelectListItem { Text = "Arts", Value = "2" },
-        new SelectListItem { Text = "Education", Value = "3" },
-    };
+    var majors = ViewData["Majors"] as IEnumerable<SelectListItem>;
 }
 
 <h3 class="text-center">New Student Form</h3>
