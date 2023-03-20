@@ -1,8 +1,8 @@
 ﻿College Management System
 =========================================
 Student (Id, Name, Address, Gender, Dob, Phone, Email)
-Lecturer (Id, Name, Address, Gender, Dob, Phone, Email, Degree)
-Staff (Id, Name, Address, Gender, Dob, Phone, Email)
+Staff (Id, Name, Address, Gender, Dob, Phone, Email, Degree, Academic, Department etc.)
+Department (Id, Name, Description, Established)  e.g. IT, Support etc.
 Major (Id, Name, Details)
 Program (Id, Name, Details, Started)
 Semester (Id, Name, StartDate, EndDate)
