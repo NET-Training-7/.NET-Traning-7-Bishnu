@@ -5,17 +5,21 @@ using F = System.IO.File;
 using CollegeManagement.Web.Helpers;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
+using f = System.IO.File;
+using CollegeManagement.Web.Helper;
+using CollegeManagement.Web.Migrations;
+
 namespace CollegeManagement.Web.Controllers;
 public class StudentsController : Controller
 {
     CollegeDbConext db = new CollegeDbConext();
-    
+
     public IActionResult Index()
-    {   
+    {
         var students = db.Students.ToList();
         return View(students);
     }
-        
+
     public IActionResult Details(int id)
     {
         var student = db.Students.Find(id);// select * from Students where Id = id

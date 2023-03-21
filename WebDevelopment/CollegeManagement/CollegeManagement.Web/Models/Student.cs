@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using CollegeManagement.Web.Enums;
+using System.ComponentModel;
 
 namespace CollegeManagement.Web.Models;
 public class Student : PersonBase
