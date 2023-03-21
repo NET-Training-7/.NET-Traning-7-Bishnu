@@ -12,16 +12,21 @@ namespace CollegeManagement.Web.Controllers
 {
     public class DepartmentsController : Controller
     {
-        private readonly CollegeDbConext _context = new CollegeDbConext();
+        private readonly CollegeDbConext _context;
 
-       
-
+        public DepartmentsController(CollegeDbConext context)
+        {
+            _context = context;
+        }
+        
         // GET: Departments
         public async Task<IActionResult> Index()
         {
-              return _context.Departments != null ? 
-                          View(await _context.Departments.ToListAsync()) :
-                          Problem("Entity set 'CollegeDbConext.Departments'  is null.");
+            if(_context.Departments is null)
+                return Problem("Entity set 'CollegeDbConext.Departments' is null.");
+            var departments = await _context.Departments.ToListAsync();    // 50 sec
+
+            return View(departments);
         }
 
         // GET: Departments/Details/5

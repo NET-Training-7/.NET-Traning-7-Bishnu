@@ -1,28 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CollegeManagement.Web.Models;
 using CollegeManagement.Web.Data;
-using F = System.IO.File;
-using CollegeManagement.Web.Helpers;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
-using f = System.IO.File;
 using CollegeManagement.Web.Helper;
-using CollegeManagement.Web.Migrations;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace CollegeManagement.Web.Controllers;
 public class StudentsController : Controller
 {
-    CollegeDbConext db = new CollegeDbConext();
+    private readonly CollegeDbConext db;
 
-    public IActionResult Index()
+    public StudentsController(CollegeDbConext _db)
     {
-        var students = db.Students.ToList();
+        db = _db;
+    }
+
+    public async Task<IActionResult> Index()
+    {
+        var students = await db.Students.ToListAsync();
         return View(students);
     }
 
-    public IActionResult Details(int id)
+    public async Task<IActionResult> Details(int id)
     {
-        var student = db.Students.Find(id);// select * from Students where Id = id
+        var student = await db.Students.FindAsync(id);// select * from Students where Id = id
         return View(student);
     }
 

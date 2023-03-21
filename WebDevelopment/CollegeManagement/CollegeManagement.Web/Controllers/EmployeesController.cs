@@ -62,7 +62,7 @@ namespace CollegeManagement.Web.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DepartmentID"] = new SelectList(_context.Departments, "Id", "Id", employee.DepartmentID);
+            ViewData["DepartmentID"] = new SelectList(_context.Departments, "Id", "Name", employee.DepartmentId);
             return View(employee);
         }
 
@@ -79,7 +79,7 @@ namespace CollegeManagement.Web.Controllers
             {
                 return NotFound();
             }
-            ViewData["DepartmentID"] = new SelectList(_context.Departments, "Id", "Id", employee.DepartmentID);
+            ViewData["DepartmentID"] = new SelectList(_context.Departments, "Id", "Name", employee.DepartmentId);
             return View(employee);
         }
 
@@ -115,7 +115,7 @@ namespace CollegeManagement.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["DepartmentID"] = new SelectList(_context.Departments, "Id", "Id", employee.DepartmentID);
+            ViewData["DepartmentID"] = new SelectList(_context.Departments, "Id", "Name", employee.DepartmentId);
             return View(employee);
         }
 
