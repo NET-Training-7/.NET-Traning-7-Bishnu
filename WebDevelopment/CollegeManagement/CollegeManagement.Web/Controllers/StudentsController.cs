@@ -1,9 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CollegeManagement.Web.Models;
 using CollegeManagement.Web.Data;
-using CollegeManagement.Web.Helper;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using CollegeManagement.Web.Extensions;
+using CollegeManagement.Web.ViewModels;
+using CollegeManagement.Web.Mappers;
 
 namespace CollegeManagement.Web.Controllers;
 public class StudentsController : Controller
@@ -18,7 +20,10 @@ public class StudentsController : Controller
     public async Task<IActionResult> Index()
     {
         var students = await db.Students.ToListAsync();
-        return View(students);
+
+        var studentViewModels = students.ToViewModel();
+
+        return View(studentViewModels);
     }
 
     public async Task<IActionResult> Details(int id)
@@ -37,14 +42,16 @@ public class StudentsController : Controller
     }
 
     [HttpPost]
-    public IActionResult Add(Student student)
+    public IActionResult Add(StudentViewModel studentVM)
     {
-        if(student == null || !ModelState.IsValid)
+        if (studentVM == null || !ModelState.IsValid)
             return View("Error", new ErrorViewModel { RequestId = "Register Student" });
 
-        string avatarPath = FormImageHelper.SaveProfileImage(student.Avatar!);
-        
-        student.AvatarPath = avatarPath;
+        string avatarPath = studentVM.Avatar.SaveProfileImage();
+
+        var student = studentVM.ToModel();
+
+        student.AvatarPath= avatarPath;
         db.Students.Add(student);
         db.SaveChanges();
 
@@ -58,14 +65,16 @@ public class StudentsController : Controller
     }
 
     [HttpPost]
-    public IActionResult Edit(Student student)
+    public IActionResult Edit(StudentViewModel studentVM)
     {
-        if (student == null || !ModelState.IsValid)
+        if (studentVM == null || !ModelState.IsValid)
             return View("Error", new ErrorViewModel { RequestId = "Update Student" });
 
-        if(student.Avatar is not null)
+        var student = studentVM.ToModel();
+
+        if (studentVM.Avatar is not null)
         {
-            var path = FormImageHelper.SaveProfileImage(student.Avatar);
+            var path = studentVM.Avatar.SaveProfileImage();            
             student.AvatarPath = path;
         }
 
@@ -83,7 +92,7 @@ public class StudentsController : Controller
 
     [HttpPost]
     public IActionResult Delete(Student student)
-    {   
+    {
         db.Students.Remove(student);
         db.SaveChanges();
 

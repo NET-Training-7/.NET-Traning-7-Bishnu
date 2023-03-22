@@ -1,5 +1,5 @@
 ﻿@using CollegeManagement.Web.Enums;
-@model Student
+@model Major
 
 @{
     var gender = Enum.GetValues<Sex>();
@@ -14,73 +14,6 @@
         <span asp-validation-for="Name" class="text-danger"></span>
         <input class="form-control" asp-for="Name" />
     </div>
-
-    <div class="col-md-6">
-        <label class="form-label" asp-for="RollNo"></label>
-        <span asp-validation-for="RollNo" class="text-danger"></span>
-        <input class="form-control" asp-for="RollNo" />
-    </div>
-
-    <div class="col-md-6">
-        <label class="form-label" asp-for="Gender"></label>
-        <span asp-validation-for="Gender" class="text-danger"></span>
-        <br />
-        @foreach (var g in gender)
-        {
-            var check = g == Model.Gender ? "checked" : "";
-            <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" id="@g" name="Gender" value="@g" @check>
-                <label class="form-check-label" for="@g">@g</label>
-            </div>
-        }
-    </div>
-
-    <div class="col-md-6">
-        <label class="form-label" asp-for="Address"></label>
-        <input class="form-control" asp-for="Address" />
-    </div>
-
-    <div class="col-md-6">
-        <label class="form-label" asp-for="Contact"></label>
-        <span asp-validation-for="Contact" class="text-danger"></span>
-        <input class="form-control" asp-for="Contact" />
-    </div>
-
-    <div class="col-md-6">
-        <label class="form-label" asp-for="Email"></label>
-        <input class="form-control" asp-for="Email" />
-    </div>
-
-    <div class="col-md-6">
-        <label class="form-label" asp-for="Dob"></label>
-        <input class="form-control" asp-for="Dob" />
-    </div>
-
-    <div class="col-md-6">
-        <label class="form-label" asp-for="Major"></label>
-        <span asp-validation-for="Major" class="text-danger"></span>
-        <input class="form-control" asp-for="Major" />
-    </div>
-
-    <div class="col-md-6">
-        <label class="form-label" asp-for="Semester"></label>
-        <span asp-validation-for="Semester" class="text-danger"></span>
-        <input class="form-control" asp-for="Semester" />
-    </div>
-
-    <div class="col-md-6">
-        <div class="row">           
-            <div class="col-10">
-                <label class="form-label" asp-for="Avatar"></label>
-                <input class="form-control" asp-for="Avatar">
-            </div>
-            <div class="col-2">
-                <img src="@Model.AvatarPath" height="70" />
-            </div>
-        </div>
-    </div>
-
-    <input type="hidden" asp-for="AvatarPath"/>
 
     <div class="col-12">
         <a class="btn btn-success" href="/students">Cancel</a>
