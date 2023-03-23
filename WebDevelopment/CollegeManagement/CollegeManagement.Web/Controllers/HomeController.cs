@@ -1,4 +1,5 @@
 ﻿using CollegeManagement.Web.Models;
+using CollegeManagement.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Diagnostics;

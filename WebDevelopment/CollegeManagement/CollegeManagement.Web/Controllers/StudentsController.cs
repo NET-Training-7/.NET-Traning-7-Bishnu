@@ -29,7 +29,8 @@ public class StudentsController : Controller
     public async Task<IActionResult> Details(int id)
     {
         var student = await db.Students.FindAsync(id);// select * from Students where Id = id
-        return View(student);
+        var studentViewModel = student.ToViewModel();
+        return View(studentViewModel);
     }
 
     public IActionResult Add()
@@ -61,7 +62,7 @@ public class StudentsController : Controller
     public IActionResult Edit(int id)
     {
         var student = db.Students.Find(id);
-        return View(student);
+        return View(student.ToViewModel());
     }
 
     [HttpPost]

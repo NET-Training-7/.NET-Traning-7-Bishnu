@@ -1,4 +1,4 @@
-namespace CollegeManagement.Web.Models
+namespace CollegeManagement.Web.ViewModels
 {
     public class ErrorViewModel
     {

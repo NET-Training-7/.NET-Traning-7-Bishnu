@@ -8,6 +8,7 @@ public static class StudentMapper
     public static Student ToModel(this StudentViewModel studentVM) =>
         new Student
         {
+            Id= studentVM.Id,
             Name = studentVM.Name,
             Dob = studentVM.Dob,
             Contact = studentVM.Contact,
@@ -23,6 +24,7 @@ public static class StudentMapper
     public static StudentViewModel ToViewModel(this Student student) =>
         new StudentViewModel
         {
+            Id= student.Id,
             Name = student.Name,
             Dob = student.Dob,
             Contact = student.Contact,
