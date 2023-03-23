@@ -22,4 +22,9 @@
     <Folder Include="wwwroot\images\profiles\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CollegeManagement.ApplicationCore\CollegeManagement.ApplicationCore.csproj" />
+    <ProjectReference Include="..\CollegeManagement.Infrastructure\CollegeManagement.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
