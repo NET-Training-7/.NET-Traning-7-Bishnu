@@ -1,3 +1,4 @@
+using CollegeManagement.Infrastructure.Repositories;
 using CollegeManagement.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<CollegeDbConext>();
+
+builder.Services.AddScoped<StudentsRepository>();
 
 var app = builder.Build();
 

@@ -6,27 +6,23 @@ using Microsoft.EntityFrameworkCore;
 using CollegeManagement.Web.Extensions;
 using CollegeManagement.Web.ViewModels;
 using CollegeManagement.Web.Mappers;
+using CollegeManagement.Infrastructure.Repositories;
 
 namespace CollegeManagement.Web.Controllers;
 public class StudentsController : Controller
 {
     private readonly CollegeDbConext db;
+    private readonly StudentsRepository studentsRepository;
 
-    public StudentsController(CollegeDbConext _db)
+    public StudentsController(CollegeDbConext _db, StudentsRepository _studentsRepository)
     {
         db = _db;
+        studentsRepository = _studentsRepository;
     }
 
     public async Task<IActionResult> Index(string searchText = "")
     {
-        List<Student> students = new();
-
-        if (searchText == "")
-            students = await db.Students.ToListAsync();
-        else
-            students = await db.Students.Where(x => x.Name.Contains(searchText) || 
-                        x.Address.Contains(searchText)).ToListAsync();
-
+        var students = await studentsRepository.GetAll(searchText);
         var studentViewModels = students.ToViewModel();
 
         return View(studentViewModels);
