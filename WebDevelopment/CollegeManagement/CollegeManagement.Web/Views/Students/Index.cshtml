@@ -1,7 +1,18 @@
 ﻿@using CollegeManagement.Web.ViewModels;
 @model List<StudentViewModel>
 
-<a asp-action="add" class="btn btn-success float-end"><i class="bi bi-plus-lg "></i> Student Registration</a>
+<div class="row">
+    <div class="col-8">
+        <form asp-action="Index" class="d-flex" method="get">
+            <input type="text" name="searchText" placeholder="Search students..." class="form-control me-2" />
+            <button type="submit" class="btn btn-success">Search</button>
+        </form>
+    </div>
+    <div class="col-4">
+        <a asp-action="add" class="btn btn-success float-end"><i class="bi bi-plus-lg "></i> Student Registration</a>
+    </div>
+</div>
+
 
 <table class="table">
     <thead>
@@ -27,7 +38,7 @@
                     @{
                         var path = string.IsNullOrEmpty(student.AvatarPath) ? "/images/profiles/student.jpeg" : student.AvatarPath;
                     }
-                    <img src="@path" height="35" class="rounded-circle"/>
+                    <img src="@path" height="35" class="rounded-circle" />
                 </td>
                 <td>@student.RollNo</td>
                 <td>@student.Name</td>

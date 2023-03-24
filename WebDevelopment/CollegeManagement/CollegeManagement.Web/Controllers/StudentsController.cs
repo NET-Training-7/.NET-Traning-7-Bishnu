@@ -17,9 +17,15 @@ public class StudentsController : Controller
         db = _db;
     }
 
-    public async Task<IActionResult> Index()
+    public async Task<IActionResult> Index(string searchText = "")
     {
-        var students = await db.Students.ToListAsync();
+        List<Student> students = new();
+
+        if (searchText == "")
+            students = await db.Students.ToListAsync();
+        else
+            students = await db.Students.Where(x => x.Name.Contains(searchText) || 
+                        x.Address.Contains(searchText)).ToListAsync();
 
         var studentViewModels = students.ToViewModel();
 
@@ -52,7 +58,7 @@ public class StudentsController : Controller
 
         var student = studentVM.ToModel();
 
-        student.AvatarPath= avatarPath;
+        student.AvatarPath = avatarPath;
         db.Students.Add(student);
         db.SaveChanges();
 
@@ -75,7 +81,7 @@ public class StudentsController : Controller
 
         if (studentVM.Avatar is not null)
         {
-            var path = studentVM.Avatar.SaveProfileImage();            
+            var path = studentVM.Avatar.SaveProfileImage();
             student.AvatarPath = path;
         }
 
