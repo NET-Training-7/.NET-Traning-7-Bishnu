@@ -13,11 +13,13 @@ public class StudentsController : Controller
 {
     private readonly CollegeDbConext db;
     private readonly StudentsRepository studentsRepository;
+    private readonly MajorsRepository majorsRepository;
 
-    public StudentsController(CollegeDbConext _db, StudentsRepository _studentsRepository)
+    public StudentsController(CollegeDbConext _db, StudentsRepository _studentsRepository, MajorsRepository majorsRepository)
     {
         db = _db;
         studentsRepository = _studentsRepository;
+        this.majorsRepository = majorsRepository;
     }
 
     public async Task<IActionResult> Index(string searchText = "")
@@ -30,14 +32,14 @@ public class StudentsController : Controller
 
     public async Task<IActionResult> Details(int id)
     {
-        var student = await db.Students.FindAsync(id);// select * from Students where Id = id
+        var student = await studentsRepository.Get(id);// select * from Students where Id = id
         var studentViewModel = student.ToViewModel();
         return View(studentViewModel);
     }
 
-    public IActionResult Add()
+    public async Task<IActionResult> Add()
     {
-        var majorsList = db.Majors.ToList();
+        var majorsList = await majorsRepository.GetAll();
         var majors = majorsList.Select(x => new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
         ViewData["Majors"] = majors;
 
@@ -55,8 +57,8 @@ public class StudentsController : Controller
         var student = studentVM.ToModel();
 
         student.AvatarPath = avatarPath;
-        db.Students.Add(student);
-        db.SaveChanges();
+        
+        studentsRepository.Insert(student);
 
         return RedirectToAction("Index");
     }

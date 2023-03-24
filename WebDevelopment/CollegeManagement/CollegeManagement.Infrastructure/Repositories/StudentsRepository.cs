@@ -28,4 +28,16 @@ public class StudentsRepository
                         x.Address.Contains(searchText)).ToListAsync();
         return students;
     }
+
+    public async ValueTask<Student> Get(int id)
+    {
+        var student = await db.Students.FindAsync(id);
+        return student;
+    }
+
+    public async Task Insert(Student student)
+    {
+        await db.Students.AddAsync(student);
+        await db.SaveChangesAsync();
+    }
 }
