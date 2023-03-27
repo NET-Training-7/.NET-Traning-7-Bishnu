@@ -13,7 +13,7 @@ public class StudentRepository : IStudentRepository
         db = _db;
     }
 
-    public async Task<List<Student>> GetAll(string searchText)
+    public async Task<List<Student>> GetAll(string searchText = "")
     {
         List<Student> students = new();
 

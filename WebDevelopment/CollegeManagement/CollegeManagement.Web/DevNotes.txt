@@ -18,3 +18,60 @@ Database Access on .NET
 ==========================================
 1. ADO.NET
 2. ORM (Object Relational Mapper) Tool: *EF Core, NHibernate, Dapper, RepoDb etc.
+
+
+
+API
+========================
+- REST API
+- Web API
+- HTTP Endpoints
+
+- API has web url which you call to receive data in mostly JSON format
+
+- XML vs JSON Data format
+e.g. a Student data
+
+<student>
+	<name>Bishnu Rawal</name>
+	<address>ktm</address>
+	<college>TU</college>
+	<roll>3435</roll>
+</student>
+<student>
+	<name>Bishnu Rawal</name>
+	<address>ktm</address>
+	<college>TU</college>
+	<roll>3435</roll>
+</student>
+<student>
+	<name>Bishnu Rawal</name>
+	<address>ktm</address>
+	<college>TU</college>
+	<roll>3435</roll>
+</student>
+
+JSON
+[
+	{
+		"name": "Bishnu Rawal",
+		"address": "ktm",
+		"college": "tu",
+		"roll": 2345
+	},
+	{
+		"name": "Bishnu Rawal",
+		"address": "ktm",
+		"college": "tu",
+		"roll": 2345
+	},
+	{
+		"name": "Bishnu Rawal",
+		"address": "ktm",
+		"college": "tu",
+		"roll": 2345
+	}
+]
+
+binary format
+- gRPC
