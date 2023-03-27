@@ -1,4 +1,5 @@
 using CollegeManagement.Infrastructure.Repositories;
+using CollegeManagement.Infrastructure.Repositories.Interfaces;
 using CollegeManagement.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<CollegeDbConext>();
 
-builder.Services.AddScoped<StudentsRepository>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<MajorsRepository>();
 
 var app = builder.Build();
 

@@ -1,23 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CollegeManagement.Web.Models;
-using CollegeManagement.Web.Data;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using CollegeManagement.Web.Extensions;
 using CollegeManagement.Web.ViewModels;
 using CollegeManagement.Web.Mappers;
 using CollegeManagement.Infrastructure.Repositories;
+using CollegeManagement.Infrastructure.Repositories.Interfaces;
 
 namespace CollegeManagement.Web.Controllers;
 public class StudentsController : Controller
 {
-    private readonly CollegeDbConext db;
-    private readonly StudentsRepository studentsRepository;
+    private readonly IStudentRepository studentsRepository;
     private readonly MajorsRepository majorsRepository;
 
-    public StudentsController(CollegeDbConext _db, StudentsRepository _studentsRepository, MajorsRepository majorsRepository)
+    public StudentsController(IStudentRepository _studentsRepository, MajorsRepository majorsRepository)
     {
-        db = _db;
         studentsRepository = _studentsRepository;
         this.majorsRepository = majorsRepository;
     }
@@ -63,14 +60,14 @@ public class StudentsController : Controller
         return RedirectToAction("Index");
     }
 
-    public IActionResult Edit(int id)
+    public async Task<IActionResult> Edit(int id)
     {
-        var student = db.Students.Find(id);
+        var student = await studentsRepository.Get(id);
         return View(student.ToViewModel());
     }
 
     [HttpPost]
-    public IActionResult Edit(StudentViewModel studentVM)
+    public async Task<IActionResult> Edit(StudentViewModel studentVM)
     {
         if (studentVM == null || !ModelState.IsValid)
             return View("Error", new ErrorViewModel { RequestId = "Update Student" });
@@ -83,23 +80,21 @@ public class StudentsController : Controller
             student.AvatarPath = path;
         }
 
-        db.Students.Update(student);
-        db.SaveChanges();
+        await studentsRepository.Edit(student);
 
         return RedirectToAction("Index");
     }
 
-    public IActionResult DeleteConfirm(int id)
+    public async Task<IActionResult> DeleteConfirm(int id)
     {
-        var student = db.Students.Find(id);
+        var student = await studentsRepository.Get(id);
         return View(student);
     }
 
     [HttpPost]
-    public IActionResult Delete(Student student)
+    public async Task<IActionResult> Delete(Student student)
     {
-        db.Students.Remove(student);
-        db.SaveChanges();
+        await studentsRepository.Delete(student.Id);
 
         return RedirectToAction("Index");
     }

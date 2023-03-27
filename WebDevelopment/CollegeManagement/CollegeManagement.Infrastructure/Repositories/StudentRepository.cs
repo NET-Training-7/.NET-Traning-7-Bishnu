@@ -1,18 +1,14 @@
-﻿using CollegeManagement.Web.Data;
+﻿using CollegeManagement.Infrastructure.Repositories.Interfaces;
+using CollegeManagement.Web.Data;
 using CollegeManagement.Web.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CollegeManagement.Infrastructure.Repositories;
-public class StudentsRepository
+public class StudentRepository : IStudentRepository
 {
     private readonly CollegeDbConext db;
 
-    public StudentsRepository(CollegeDbConext _db)
+    public StudentRepository(CollegeDbConext _db)
     {
         db = _db;
     }
@@ -39,5 +35,16 @@ public class StudentsRepository
     {
         await db.Students.AddAsync(student);
         await db.SaveChangesAsync();
+    }
+
+    public async Task Edit(Student student)
+    {
+        db.Students.Update(student);
+        await db.SaveChangesAsync();
+    }
+
+    public async Task Delete (int id)
+    {
+        await db.Students.Where(x => x.Id == id).ExecuteDeleteAsync();
     }
 }

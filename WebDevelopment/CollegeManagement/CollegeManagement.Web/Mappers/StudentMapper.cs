@@ -18,7 +18,8 @@ public static class StudentMapper
             Major = studentVM.Major,
             Program = studentVM.Program,
             Semester = studentVM.Semester,
-            RollNo = studentVM.RollNo
+            RollNo = studentVM.RollNo,
+            AvatarPath= studentVM.AvatarPath
         };
 
     public static StudentViewModel ToViewModel(this Student student) =>
