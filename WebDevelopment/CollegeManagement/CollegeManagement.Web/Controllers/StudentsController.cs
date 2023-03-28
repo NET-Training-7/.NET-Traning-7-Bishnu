@@ -21,10 +21,17 @@ public class StudentsController : Controller
 
     public async Task<IActionResult> Index(string searchText = "")
     {
-        var students = await studentsRepository.GetAll(searchText);
-        var studentViewModels = students.ToViewModel();
+        try
+        {
+            var students = await studentsRepository.GetAll(searchText);
+            var studentViewModels = students.ToViewModel();
 
-        return View(studentViewModels);
+            return View(studentViewModels);
+        }
+        catch(Exception ex)
+        {
+            return View(ex);
+        }
     }
 
     public async Task<IActionResult> Details(int id)

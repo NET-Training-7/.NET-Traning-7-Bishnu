@@ -15,14 +15,21 @@ public class StudentRepository : IStudentRepository
 
     public async Task<List<Student>> GetAll(string searchText = "")
     {
-        List<Student> students = new();
+        try
+        {
+            List<Student> students = new();
 
-        if (searchText == "")
-            students = await db.Students.ToListAsync();
-        else
-            students = await db.Students.Where(x => x.Name.Contains(searchText) ||
-                        x.Address.Contains(searchText)).ToListAsync();
-        return students;
+            if (searchText == "")
+                students = await db.Students.ToListAsync();
+            else
+                students = await db.Students.Where(x => x.Name.Contains(searchText) ||
+                            x.Address.Contains(searchText)).ToListAsync();
+            return students;
+        }
+        catch (Exception ex)
+        {
+            throw new Exception($"Unable to connect to db. Error: {ex.Message}");
+        }
     }
 
     public async ValueTask<Student> Get(int id)
