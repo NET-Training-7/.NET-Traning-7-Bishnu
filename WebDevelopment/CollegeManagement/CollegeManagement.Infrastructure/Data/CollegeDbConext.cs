@@ -1,8 +1,9 @@
 ﻿using CollegeManagement.Web.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace CollegeManagement.Web.Data;
-public class CollegeDbConext: DbContext
+public class CollegeDbConext: IdentityDbContext
 {
     public DbSet<Student> Students { get; set; }
     public DbSet<Major> Majors { get; set; }

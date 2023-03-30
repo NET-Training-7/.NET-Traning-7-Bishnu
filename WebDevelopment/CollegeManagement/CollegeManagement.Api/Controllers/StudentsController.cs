@@ -1,7 +1,5 @@
-﻿using CollegeManagement.Infrastructure.Repositories;
-using CollegeManagement.Infrastructure.Repositories.Interfaces;
+﻿using CollegeManagement.Infrastructure.Repositories.Interfaces;
 using CollegeManagement.Web.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CollegeManagement.Api.Controllers;
@@ -38,7 +36,24 @@ public class StudentsController : ControllerBase
     public async Task<ActionResult> Post(Student student)
     {
         await studentRepository.Insert(student);
-        
+
         return Created($"/api/student/{student.Id}", student);
+    }
+
+    [HttpPut("{id}")]
+    public async Task<ActionResult> Put(int id, Student student)
+    {
+        student.Id = id;
+        await studentRepository.Edit(student);
+
+        return NoContent();
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<ActionResult> Delete(int id)
+    {
+        await studentRepository.Delete(id);
+
+        return NoContent();
     }
 }

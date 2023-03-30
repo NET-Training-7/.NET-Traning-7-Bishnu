@@ -20,9 +20,9 @@ public class StudentRepository : IStudentRepository
             List<Student> students = new();
 
             if (searchText == "")
-                students = await db.Students.ToListAsync();
+                students = await db.Students.Include(s => s.Major).ToListAsync();
             else
-                students = await db.Students.Where(x => x.Name.Contains(searchText) ||
+                students = await db.Students.Include(s => s.Major).Where(x => x.Name.Contains(searchText) ||
                             x.Address.Contains(searchText)).ToListAsync();
             return students;
         }

@@ -26,7 +26,10 @@ public class StudentViewModel
 
     [DisplayName("Roll Number")]
     public int RollNo { get; set; }
-    public string Major { get; set; } = string.Empty;
+
+    [DisplayName("Major")]
+    public int MajorId { get; set; }
+    public string MajorName { get; set; } = string.Empty;
     public string Program { get; set; } = string.Empty;
     public string Semester { get; set; } = string.Empty;
 }

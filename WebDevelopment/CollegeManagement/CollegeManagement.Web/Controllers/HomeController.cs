@@ -32,7 +32,7 @@ namespace CollegeManagement.Web.Controllers
                     RollNo = reader.GetInt32(0),
                     Name = reader.GetString(1),
                     Contact = reader.GetString(2),
-                    Major = reader.GetString(3),
+                    MajorId = reader.GetInt32(3),
                     Semester = reader.GetString(5),
                 };
                 students.Add(student);
