@@ -1,0 +1,11 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@model (IdentityUser, List<IdentityRole>)
+
+<h3>Role assignment for @Model.Item1.UserName</h3>
+
+
+@foreach(var role in Model.Item2)
+{
+    <input type="checkbox"/> @role.Name
+    <br />
+}

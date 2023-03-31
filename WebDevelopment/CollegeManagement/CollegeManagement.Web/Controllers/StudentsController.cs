@@ -6,8 +6,11 @@ using CollegeManagement.Web.ViewModels;
 using CollegeManagement.Web.Mappers;
 using CollegeManagement.Infrastructure.Repositories;
 using CollegeManagement.Infrastructure.Repositories.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CollegeManagement.Web.Controllers;
+
+[Authorize(Roles = "Admin")]
 public class StudentsController : Controller
 {
     private readonly IStudentRepository studentsRepository;
@@ -19,6 +22,7 @@ public class StudentsController : Controller
         this.majorsRepository = majorsRepository;
     }
 
+    [AllowAnonymous]
     public async Task<IActionResult> Index(string searchText = "")
     {
         try
